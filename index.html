@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Women's Day Anshikaaa ❤️</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+font-family: 'Segoe UI', sans-serif;
+overflow:hidden;
+}
+
+/* Floating Hearts */
+
+.hearts span{
+position:absolute;
+bottom:-20px;
+font-size:22px;
+animation:float 7s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0) scale(.5);opacity:1;}
+100%{transform:translateY(-900px) scale(1.5);opacity:0;}
+}
+
+/* Card */
+
+.card{
+width:350px;
+height:240px;
+perspective:1000px;
+cursor:pointer;
+}
+
+.inner{
+width:100%;
+height:100%;
+position:relative;
+transition:transform 1s;
+transform-style:preserve-3d;
+}
+
+.card.open .inner{
+transform:rotateY(180deg);
+}
+
+.side{
+position:absolute;
+width:100%;
+height:100%;
+border-radius:15px;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+backface-visibility:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+/* Front */
+
+.front{
+background:white;
+color:#ff2e63;
+font-size:26px;
+font-weight:bold;
+}
+
+/* Back */
+
+.back{
+background:#fff0f5;
+transform:rotateY(180deg);
+flex-direction:column;
+}
+
+/* Name glow */
+
+.name{
+font-size:24px;
+font-weight:bold;
+color:#ff2e63;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{ text-shadow:0 0 5px #ff2e63;}
+to{ text-shadow:0 0 20px #ff2e63;}
+}
+
+/* Heart beat */
+
+.heart{
+font-size:35px;
+animation:beat 1s infinite;
+}
+
+@keyframes beat{
+0%{transform:scale(1);}
+50%{transform:scale(1.3);}
+100%{transform:scale(1);}
+}
+
+.message{
+margin-top:10px;
+font-size:18px;
+color:#333;
+}
+
+.rose{
+font-size:25px;
+margin-top:8px;
+animation:roseMove 2s infinite alternate;
+}
+
+@keyframes roseMove{
+from{transform:translateY(0);}
+to{transform:translateY(-8px);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hearts">
+<span style="left:10%">❤️</span>
+<span style="left:25%;animation-delay:1s">💖</span>
+<span style="left:40%;animation-delay:2s">💕</span>
+<span style="left:60%;animation-delay:3s">💗</span>
+<span style="left:75%;animation-delay:4s">💞</span>
+<span style="left:90%;animation-delay:5s">❤️</span>
+</div>
+
+<div class="card" onclick="openCard()">
+<div class="inner">
+
+<div class="side front">
+Tap To Open 💌
+</div>
+
+<div class="side back">
+
+<div class="heart">❤️</div>
+
+<div class="message">
+
+Happy Women's Day 💐 <br><br>
+
+<span class="name">Anshikaaa</span> ✨ <br><br>
+
+You are strong, beautiful and inspiring.  
+Thank you for making my life brighter every day. 💖
+
+</div>
+
+<div class="rose">🌹🌹🌹</div>
+
+</div>
+
+</div>
+</div>
+
+<!-- Optional music -->
+<audio id="music">
+<source src="https://cdn.pixabay.com/audio/2022/03/15/audio_115b9d8d1f.mp3">
+</audio>
+
+<script>
+
+function openCard(){
+document.querySelector(".card").classList.toggle("open");
+document.getElementById("music").play();
+}
+
+</script>
+
+</body>
+</html>
